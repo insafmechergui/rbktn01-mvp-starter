@@ -1,9 +1,10 @@
 import React from 'react';
 
-const ListItem = (props) => (
+const ListPatient = (props) => (
   <div>
-    { props.item.description }
+
+    { props.patient.name }
   </div>
 )
 
-export default ListItem;
+export default ListPatient;

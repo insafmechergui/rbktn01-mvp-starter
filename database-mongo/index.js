@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test', {  useMongoClient: true,});
+mongoose.Promise = Promise;
+
 
 var db = mongoose.connection;
 
@@ -11,21 +13,26 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var patientSchema = mongoose.Schema({
+  name: String,
+  date: Date,
+  address: String,
+  phone: Number,
+  disease: String,
+  medication: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Patient = mongoose.model('Patient', patientSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  Patient.find({}, function(err, patients) {
     if(err) {
       callback(err, null);
     } else {
-      callback(null, items);
+      callback(null, patients);
     }
   });
 };
 
 module.exports.selectAll = selectAll;
+module.exports.Patient = Patient;
