@@ -1,0 +1,66 @@
+#register{
+  width: 90%;
+  margin: auto;
+  color: #808285;
+  margin-bottom: 20px;
+}
+
+#app h4 {
+  color: #4A0D66;
+
+}
+
+h1 {
+  text-align: center;
+  background-color: #4A0D66;
+  color: aliceblue;
+}
+
+input[type=text], input[type=number], input[type=date]  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+img{
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+
+}
+
+#app {
+  width: 90%;
+  margin:auto;
+}
+#hide{
+  display: none;
+}
+th, td {
+  width:150px;
+  text-align:center;
+
+}
+td {
+  color: #808285;
+
+}
+table {
+  margin: auto;
+  width: 90%;
+
+}
+.direction{
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+/* #register{
+  display: flex;
+  justify-content: space-between;
+} */

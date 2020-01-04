@@ -21,21 +21,14 @@ componentDidMount() {
     console.log('Error ', error);
   });
 }
-updatePatient() {
-  // this.setState({
-  //   patients: newName
-  // })
-}
-deletePatient(rowId) {
-  const arrayCopy = this.state.patients.filter((row) => row.id !== rowId);
-  this.setState({data: arrayCopy});
 
-}
 
 render() {
   console.log(this.state.patients);
    return(
-   <div>
+   <div class="direction">
+        <h4> Patient List </h4>
+
      <table class="table">
       <thead>
         <tr>
@@ -51,14 +44,14 @@ render() {
       {this.state.patients.map(patient => {
         return (
         <tr>
+          <td id="hide">{patient.id}</td>
           <td>{patient.name}</td>
           <td>{patient.date}</td>
           <td>{patient.address}</td>
           <td>{patient.phone}</td>
           <td>{patient.disease}</td>
           <td>{patient.medication}</td>
-          <td><button onClick={this.updatePatient.bind(this)}>Update</button></td>
-          <td><button onClick={this.deletePatient.bind(this, patient.id)}>Delete</button></td>
+
         </tr>
       )
       })}

@@ -29,11 +29,12 @@ app.post('/savePatient', (req, res, next) => {
   var pat = new Patient(req.body);
   pat.save()
   .then(item => {
-    res.send("item saved to database");
+    res.send();
   })
   .catch(err => {
     res.status(400).send("unable to save to database");
   });
+  res.redirect('/');
 
 })
 
@@ -42,6 +43,7 @@ app.get('/displayPatient', (req, res, next) => {
     res.send(result)
   })
 })
+
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

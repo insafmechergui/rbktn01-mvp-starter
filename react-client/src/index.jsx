@@ -32,8 +32,10 @@ class App extends React.Component {
     $.ajax({
       url: '/displayPatient',
       success: (data) => {
+        event.preventDefault();
         this.setState({
-          patients: data.data
+          patients: data.data,
+
         })
       },
       error: (err) => {
@@ -56,7 +58,6 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Alzheimer Records</h1>
       <List items={this.state.items}/>
       <ListPatient patients={this.state.patients}/>
     </div>)

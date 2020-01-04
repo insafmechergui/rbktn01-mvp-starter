@@ -6,19 +6,41 @@ class List extends React.Component {
   render() {
     return (
       <div >
-        <h4> Save Patient </h4>
-        <form action="/savePatient" method="post">
-          <div class="form-group">
-            Name: <input type="text" name="name" class="form-control"/>
-            Birth-Date: <input type="date" name="date" class="form-control"/>
-            Address: <input type="text" name="address" class="form-control"/>
-            Phone Number: <input type="number" name="phone" class="form-control"/>
-            Disease: <input type="text" name="disease" class="form-control"/>
-            Medication: <input type="text" name="medication" class="form-control"/>
-            Description: <textarea></textarea>
-            <input type="submit" value="Save new patient" class="form-control"/>
+        <h4> Add Patient </h4>
+        <form action="/savePatient" method="post" id="register">
+          <div class="row" id="register">
+          <div class="form-group ">
+            <label for="exampleInputName">Name: </label>
+            <input type="text" class="form-control" name="name" />
+
+            <label for="exampleInputDate">Birth-Date: </label>
+            <input type="date" class="form-control" name="date" />
           </div>
-        </form>
+          <div class="form-group ">
+
+            <label for="exampleInputAddress">Address: </label>
+            <input type="text" class="form-control" name="address" />
+
+            <label for="exampleInputNumber">Phone Number:</label>
+            <input type="number" class="form-control" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputDisease">Disease: </label>
+            <input type="text" class="form-control" name="disease" />
+
+            <label for="exampleInputMedication">Medication: </label>
+            <input type="text" class="form-control" name="medication" />
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputDescription">Description: </label>
+            <input type="text" class="form-control" name="description" />
+
+          </div>
+
+          <button type="submit" class="btn " >Add new Patient</button>
+          </div>
+          </form>
       </div>
       )
   }
